@@ -1,0 +1,35 @@
+$grid-gutter: (
+  xs: 16px,
+  sm: 16px,
+  md: 24px,
+  lg: 24px,
+  xl: 24px,
+);
+
+$grid-margin: (
+  xs: 16px,
+  sm: 20px,
+  md: 28px,
+  lg: 32px,
+  xl: 32px,
+);
+
+$grid-cols: (
+  xs: 4,
+  sm: 6,
+  md: 6,
+  lg: 12,
+  xl: 12,
+);
+
+@mixin make-grid($size) {
+
+}
+
+.grid {
+  @each $name in [sm, md, lg, xl] {
+    @include bp(#{$name}-min) {
+      margin: 0 $grid-margin[$name];
+    }
+  }
+}
