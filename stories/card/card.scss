@@ -1,0 +1,50 @@
+@use '../../globals/globals.scss';
+
+.card {
+  position: relative;
+}
+
+.card__link {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+}
+
+.card__content {
+  padding: 16px;
+
+  .card--background & {
+    background: globals.$c-background-light;
+  }
+
+  & > * + * {
+    padding-top: 12px;
+  }
+}
+
+.card__price-value {
+  font-weight: globals.$font-weight-bold;
+}
+
+.card-price-currency {
+  font-size: 16px;
+  margin-left: 4px;
+  vertical-align: text-bottom;
+}
+
+.card__cta {
+  display: flex;
+  align-items: center;
+  font-weight: globals.$font-weight-bold;
+  color: globals.$c-text-link;
+}
+
+.card__arrow {
+  transition: transform 100ms ease-in-out;
+
+  .card__link:hover ~ .card__content & {
+    transform: translateX(4px);
+  }
+}
