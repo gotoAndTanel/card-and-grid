@@ -27,7 +27,7 @@ export const Card = ({
   const HeadingElement = heading;
 
   return (
-    <div className={BEM.join(' ')} {...props}>
+    <div className={BEM.join(' ')}>
       {props.href && (
         <a href={props.href} className="card__link" aria-label={buttonLabel} />
       )}

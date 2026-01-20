@@ -25,17 +25,9 @@ export const Col = ({
     'grid-col--xl-' + xl,
   ];
 
-  return (
-    <div className={BEM.join(' ')} {...props}>
-      {props.children}
-    </div>
-  );
+  return <div className={BEM.join(' ')}>{props.children}</div>;
 };
 
 export const Grid = ({ ...props }) => {
-  return (
-    <div className={'grid'} {...props}>
-      {props.children}
-    </div>
-  );
+  return <div className={'grid'}>{props.children}</div>;
 };

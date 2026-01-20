@@ -1,4 +1,21 @@
+# Tallink Test Project
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+It is made for Tallink as a homework assignment.
+
+## Setup
+To install project dependencies, run the following:
+
+```bash
+npm install
+```
+
+## Storybook
+To view the developed components (Card & Grid) run the following command to start Storybook:
+
+```bash
+npm run storybook
+```
 
 ## Getting Started
 
