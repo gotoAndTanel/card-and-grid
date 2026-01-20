@@ -9,6 +9,9 @@ export default function Home() {
   return (
     <div className="flex items-center justify-center">
       <main className="flex min-h-screen w-full flex-col items-center justify-between sm:items-start">
+        <div className='mb-4 ml-8'>
+          <h1>Grid</h1>
+        </div>
         <Grid>
           <Col xs={2} lg={3} xl={3}>
             <TestCard/>
