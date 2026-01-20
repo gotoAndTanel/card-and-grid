@@ -4,7 +4,7 @@ import { ArrowRight } from '@/stories/icons/ArrowRight';
 
 export interface CardProps {
   title: string;
-  excerpt: string;
+  excerpt?: string;
   price: {
     text: string;
     value: number;
@@ -36,20 +36,26 @@ export const Card = ({
         <HeadingElement className={'card__title h2'}>
           {props.title}
         </HeadingElement>
-        <div className={'card__excerpt'}>{props.excerpt}</div>
-        <div className="card__price">
-          <div className="card__price-text">{props.price.text}</div>
-          <div className="card__price-value h3">
-            {props.price.value}
-            <span className="card-price-currency">
-              {props.price.currency ?? '€'}
-            </span>
+        {props.excerpt && (
+          <div className={'card__excerpt'}>{props.excerpt}</div>
+        )}
+        {props.price && (
+          <div className="card__price">
+            <div className="card__price-text">{props.price.text}</div>
+            <div className="card__price-value h3">
+              {props.price.value}
+              <span className="card-price-currency">
+                {props.price.currency ?? '€'}
+              </span>
+            </div>
           </div>
-        </div>
-        <div className="card__cta">
-          {buttonLabel}
-          <ArrowRight class="card__arrow" />
-        </div>
+        )}
+        {props.href && (
+          <div className="card__cta">
+            {buttonLabel}
+            <ArrowRight class="card__arrow" />
+          </div>
+        )}
       </div>
     </div>
   );

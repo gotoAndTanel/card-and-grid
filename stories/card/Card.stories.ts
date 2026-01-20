@@ -5,12 +5,6 @@ const meta: Meta = {
   title: 'Component/Card',
   component: Card,
   tags: ['autodocs'],
-} satisfies Meta<typeof Card>;
-
-export default meta;
-type Story = StoryObj<typeof meta>;
-
-export const Primary: Story = {
   args: {
     title: 'Lorem ipsum dolor',
     excerpt:
@@ -26,22 +20,27 @@ export const Primary: Story = {
     background: false,
     href: '#',
   },
-};
+} satisfies Meta<typeof Card>;
+
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const Primary: Story = {};
 
 export const WithBackground: Story = {
   args: {
-    title: 'Lorem ipsum dolor',
-    excerpt:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id ligula tortor.',
-    price: {
-      text: 'Room starts at',
-      value: 106,
-    },
-    image: {
-      src: 'https://placehold.co/1600x900',
-      alt: 'card image',
-    },
     background: true,
-    href: '#',
+  },
+};
+
+export const NoExcerpt: Story = {
+  args: {
+    excerpt: undefined,
+  },
+};
+
+export const NoPrice: Story = {
+  args: {
+    price: undefined,
   },
 };
