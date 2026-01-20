@@ -9,11 +9,11 @@ export interface ColProps {
 }
 
 export const Col = ({
-    xs = 1,
-    sm = 1,
-    md = 1,
-    lg = 1,
-    xl = 1,
+    xs = 2,
+    sm = 2,
+    md = 3,
+    lg = 3,
+    xl = 3,
     ...props
 }: ColProps) => {
     const BEM = [
