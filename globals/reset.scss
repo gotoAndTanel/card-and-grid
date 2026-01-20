@@ -1,9 +1,11 @@
+@use 'globals.scss';
+
 html {
-  color: $c-text;
-  background: $c-background;
-  font-size: $font-size-base;
-  line-height: $line-height-base;
-  font-family: $font-family-base;
+  color: globals.$c-text;
+  background: globals.$c-background;
+  font-size: globals.$font-size-base;
+  line-height: globals.$line-height-base;
+  font-family: globals.$font-family-base;
 }
 
 h1,

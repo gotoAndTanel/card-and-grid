@@ -1,3 +1,7 @@
+@use 'sass:map';
+@use 'sass:math';
+@use '../../globals/globals.scss';
+
 $grid-gutter: (
   xs: 16px,
   sm: 16px,
@@ -22,14 +26,63 @@ $grid-cols: (
   xl: 12,
 );
 
-@mixin make-grid($size) {
-
-}
+$grid-width: (
+  xs: 360px,
+  sm: 600px,
+  md: 800px,
+  lg: 1024px,
+  xl: 1288px,
+);
 
 .grid {
-  @each $name in [sm, md, lg, xl] {
-    @include bp(#{$name}-min) {
-      margin: 0 $grid-margin[$name];
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+
+.grid-col {
+  order: 0;
+  flex: 0 0 auto;
+  flex-basis: 100%;
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@mixin make-cols($size) {
+  .grid {
+    width: map.get($grid-width, $size);
+    padding: 0 ((map.get($grid-margin, $size)) - map.get($grid-gutter, $size) * .5);
+  }
+
+  .grid-col {
+    padding-right: (map.get($grid-gutter, $size)) * .5;
+    padding-left: (map.get($grid-gutter, $size)) * .5;
+    margin-bottom: (map.get($grid-gutter, $size));
+  }
+
+  @for $i from 1 through map.get($grid-cols, $size) {
+    .grid-col--#{$size}-#{$i} {
+      flex-basis: math.div(100%, map.get($grid-cols, $size)) * $i;
+      max-width: math.div(100%, map.get($grid-cols, $size)) * $i;
     }
   }
+}
+
+@include make-cols(xs);
+
+@include globals.bp(sm-min) {
+  @include make-cols(sm);
+}
+
+@include globals.bp(md-min) {
+  @include make-cols(md);
+}
+
+@include globals.bp(lg-min) {
+  @include make-cols(lg);
+}
+
+@include globals.bp(xl-min) {
+  @include make-cols(xl);
 }

@@ -1,31 +1,28 @@
+@use "../globals/variables.scss";
+
 @mixin bp($point) {
-  @if $point == xxs {
-    @media only screen and (max-width: #{$bp-xs-min - 1}) {
-      @content;
-    }
-  }
-  @else if $point == xs-min {
-    @media only screen and (min-width: #{$bp-xs-min}) {
+  @if $point == xs-min {
+    @media only screen and (min-width: #{variables.$bp-xs-min}) {
       @content;
     }
   }
   @else if $point == sm-min {
-    @media only screen and (min-width: #{$bp-sm-min}) {
+    @media only screen and (min-width: #{variables.$bp-sm-min}) {
       @content;
     }
   }
   @else if $point == md-min {
-    @media only screen and (min-width: #{$bp-md-min}) {
+    @media only screen and (min-width: #{variables.$bp-md-min}) {
       @content;
     }
   }
   @else if $point == lg-min {
-    @media only screen and (min-width: #{$bp-lg-min}) {
+    @media only screen and (min-width: #{variables.$bp-lg-min}) {
       @content;
     }
   }
   @else if $point == xl-min {
-    @media only screen and (min-width: #{$bp-xl-min}) {
+    @media only screen and (min-width: #{variables.$bp-xl-min}) {
       @content;
     }
   }
