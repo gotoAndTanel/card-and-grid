@@ -17,7 +17,7 @@ const Content = () => (
 );
 
 export const Primary: Story = {
-  render: (args) => (
+  render: () => (
     <Grid>
       <Col xs={2} sm={2} md={2} lg={3} xl={3}>
         <Content />

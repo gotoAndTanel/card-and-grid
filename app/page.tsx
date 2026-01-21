@@ -2,12 +2,11 @@ import { Card } from '@/src/card/Card';
 import cardMeta from '@/src/card/Card.stories';
 import { Col, Grid } from '@/src/grid/Grid';
 
-export default function Home() {
-  const TestCard = () => <Card {...cardMeta.args} />;
-  const TestCardBackground = () => (
-    <Card {...cardMeta.args} background={true} />
-  );
+const TestCard = () => <Card {...cardMeta.args} />;
 
+const TestCardBackground = () => <Card {...cardMeta.args} background={true} />;
+
+export default function Home() {
   return (
     <div className="flex items-center justify-center">
       <main className="flex min-h-screen w-full flex-col items-center justify-between sm:items-start">
