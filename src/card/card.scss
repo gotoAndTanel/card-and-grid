@@ -26,6 +26,10 @@
   }
 }
 
+.card__excerpt {
+  margin: 0;
+}
+
 .card__price-value {
   font-weight: globals.$font-weight-bold;
 }

@@ -27,7 +27,7 @@ export const Card = ({
   const HeadingElement = heading;
 
   return (
-    <div className={BEM.join(' ')}>
+    <article className={BEM.join(' ')}>
       {props.href && (
         <a href={props.href} className="card__link" aria-label={buttonLabel} />
       )}
@@ -41,9 +41,7 @@ export const Card = ({
         <HeadingElement className={'card__title h2'}>
           {props.title}
         </HeadingElement>
-        {props.excerpt && (
-          <div className={'card__excerpt'}>{props.excerpt}</div>
-        )}
+        {props.excerpt && <p className={'card__excerpt'}>{props.excerpt}</p>}
         {props.price && (
           <div className="card__price">
             <div className="card__price-text">{props.price.text}</div>
@@ -62,6 +60,6 @@ export const Card = ({
           </div>
         )}
       </div>
-    </div>
+    </article>
   );
 };
