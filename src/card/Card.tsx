@@ -1,6 +1,6 @@
 import './card.scss';
-import { Image, ImageProps } from '@/stories/image/Image';
-import { ArrowRight } from '@/stories/icons/ArrowRight';
+import { ArrowRight } from '@/src/icons/ArrowRight';
+import { Image, ImageProps } from '@/src/image/Image';
 
 export interface CardProps {
   title: string;
@@ -8,7 +8,7 @@ export interface CardProps {
   price: {
     text: string;
     value: number;
-    currency: string;
+    currency?: string;
   };
   buttonLabel: string;
   image: ImageProps;
@@ -31,7 +31,12 @@ export const Card = ({
       {props.href && (
         <a href={props.href} className="card__link" aria-label={buttonLabel} />
       )}
-      <Image {...props.image} />
+      <Image
+        src={props.image.src}
+        alt={props.image.alt}
+        width={1600}
+        height={900}
+      />
       <div className="card__content">
         <HeadingElement className={'card__title h2'}>
           {props.title}
@@ -53,7 +58,7 @@ export const Card = ({
         {props.href && (
           <div className="card__cta">
             {buttonLabel}
-            <ArrowRight class="card__arrow" />
+            <ArrowRight className={'card__arrow'} />
           </div>
         )}
       </div>

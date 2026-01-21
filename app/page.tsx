@@ -1,6 +1,6 @@
-import { Card } from '@/stories/card/Card';
-import cardMeta from '@/stories/card/Card.stories';
-import { Col, Grid } from '@/stories/grid/Grid';
+import { Card } from '@/src/card/Card';
+import cardMeta from '@/src/card/Card.stories';
+import { Col, Grid } from '@/src/grid/Grid';
 
 export default function Home() {
   const TestCard = () => <Card {...cardMeta.args} />;

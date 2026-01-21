@@ -1,4 +1,4 @@
-import { Col, Grid } from '@/stories/grid/Grid';
+import { Col, Grid } from '@/src/grid/Grid';
 import { Meta, StoryObj } from '@storybook/nextjs-vite';
 
 const meta: Meta = {
@@ -7,7 +7,6 @@ const meta: Meta = {
     layout: 'fullscreen',
   },
   component: Grid,
-  subcomponent: { Col },
   tags: ['autodocs'],
 } satisfies Meta<typeof Grid>;
 export default meta;

@@ -1,4 +1,4 @@
-import { Card } from '@/stories/card/Card';
+import { Card } from '@/src/card/Card';
 import { Meta, StoryObj } from '@storybook/nextjs-vite';
 
 const meta: Meta = {
